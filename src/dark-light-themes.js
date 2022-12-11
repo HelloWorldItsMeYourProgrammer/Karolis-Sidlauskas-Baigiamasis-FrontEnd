@@ -138,7 +138,7 @@ export const themeSettings = (mode) => {
               light: colors.blue[100],
             },
             background: {
-              default: colors.bluevioletet[500],
+              default: colors.blueviolet[500],
             },
           }
         : {
@@ -154,7 +154,7 @@ export const themeSettings = (mode) => {
               light: colors.blue[100],
             },
             background: {
-              default: "#fcfcfc",
+              default: "#bf8aef",
             },
           }),
     },
