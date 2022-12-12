@@ -3,18 +3,18 @@ import { Routes, Route } from "react-router-dom";
 import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard/index";
-// import Invoices from "./global/invoices";
-// import Contacts from "./global/contacts";
-// import Team from "./global/team";
-// import Pie from "./global/pie";
+// import Invoices from "./scenes/invoices/index";
+// import Contacts from "./scenes/contacts/index";
+// import Team from "./scenes/team/index";
+// import Pie from "./scenes/pie/index";
 import Bar from "./scenes/bar/index";
-// import Form from "./global/form";
-// import Line from "./global/line";
-import Geography from "./scenes/geography";
-// import FAQ from "./global/faq";
+// import Form from "./scenes/form/index";
+import Line from "./scenes/line/index";
+import Geography from "./scenes/geography/index";
+// import FAQ from "./scenes/faq/index";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
-// import Calendar from "./global/calendar";
+// import Calendar from "./scenes/calendar/index";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -36,7 +36,7 @@ function App() {
               {/* <Route path="/pie" element={<Pie />} /> */}
               <Route path="/bar" element={<Bar />} />
               {/* <Route path="/form" element={<Form />} /> */}
-              {/* <Route path="/line" element={<Line />} /> */}
+              <Route path="/line" element={<Line />} />
               <Route path="/geography" element={<Geography />} />
               {/* <Route path="/faq" element={<FAQ />} /> */}
               {/* <Route path="/calendar" element={<Calendar />} /> */}
