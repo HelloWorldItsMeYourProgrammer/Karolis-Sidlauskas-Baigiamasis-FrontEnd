@@ -10,7 +10,7 @@ import Dashboard from "./scenes/dashboard/index";
 import Bar from "./scenes/bar/index";
 // import Form from "./global/form";
 // import Line from "./global/line";
-// import Geography from "./global/geography";
+import Geography from "./scenes/geography";
 // import FAQ from "./global/faq";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
@@ -37,7 +37,7 @@ function App() {
               <Route path="/bar" element={<Bar />} />
               {/* <Route path="/form" element={<Form />} /> */}
               {/* <Route path="/line" element={<Line />} /> */}
-              {/* <Route path="/geography" element={<Geography />} /> */}
+              <Route path="/geography" element={<Geography />} />
               {/* <Route path="/faq" element={<FAQ />} /> */}
               {/* <Route path="/calendar" element={<Calendar />} /> */}
             </Routes>
