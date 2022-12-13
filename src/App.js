@@ -8,6 +8,7 @@ import Team from "./scenes/clients/index";
 import Pie from "./scenes/pie/index";
 import Bar from "./scenes/bar/index";
 import Form from "./scenes/form/index";
+import Login from "./scenes/login/index";
 import Geography from "./scenes/geography/index";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
@@ -30,6 +31,7 @@ function App() {
               <Route path="/pie" element={<Pie />} />
               <Route path="/bar" element={<Bar />} />
               <Route path="/form" element={<Form />} />
+              <Route path="/login" element={<Login />} />
               <Route path="/geography" element={<Geography />} />
             </Routes>
           </main>
