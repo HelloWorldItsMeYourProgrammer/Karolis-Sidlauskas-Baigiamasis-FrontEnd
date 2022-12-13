@@ -4,7 +4,8 @@ import { Box, Button, TextField } from "@mui/material";
 // import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../../components/Header";
-// import { useHistory } from 'react-router-dom';
+import { Navigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 
 //REGISTER 
@@ -17,7 +18,7 @@ const Form = () => {
   // };
 
   // const history = useHistory();
-
+  const navigate = useNavigate();
   const [email, setEmail] = useState('')
   const [password, setPassword ] = useState('')
 
@@ -37,7 +38,9 @@ const Form = () => {
 
     const data = await response.json()
 
-    console.log(data)
+    if(data.status === "ok") {
+      Navigate.push('/login')
+    }
 
   }
 

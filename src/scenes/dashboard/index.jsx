@@ -9,33 +9,39 @@ import GeographyChart from "../../components/GeographyChart";
 import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
-// import jwt from 'jsonwebtoken'
+import { useJwt } from "react-jwt";
 import { useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
+import jwt_decode from 'jwt-decode';
 
 const Dashboard = () => {
   const navigate = useNavigate();
 
   async function populateQuote(){
-    await fetch('/api/quote', {
+    const req = await fetch('http://localhost:1337/api/quote', {
       headers: {
-        'x-access-token': localStorage.getItem('token')
+        'x-access-token': localStorage.getItem('token'),
       },
     })
+
+    const data = req.json()
+    console.log(data)
+ {
+
+ }
   }
 
   useEffect(() => {
-    
     const token = localStorage.getItem('token')
-    // if (token){
-    //   const user = jwt.decode(token)
-    //   if(!user){
-    //     localStorage.removeItem('token')
-    //     navigate.replace('/login')
-    //   }else{
-    //     populateQuote()
-    //   }
-    // }
+    if (token){
+      const user = jwt_decode(token)
+      if(!user){
+        localStorage.removeItem('token')
+        navigate.replace('/login')
+      }else{
+        populateQuote()
+      }
+    }
   }, [])
 
   const theme = useTheme();
