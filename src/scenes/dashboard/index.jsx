@@ -9,8 +9,35 @@ import GeographyChart from "../../components/GeographyChart";
 import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
+// import jwt from 'jsonwebtoken'
+import { useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
+  async function populateQuote(){
+    await fetch('/api/quote', {
+      headers: {
+        'x-access-token': localStorage.getItem('token')
+      },
+    })
+  }
+
+  useEffect(() => {
+    
+    const token = localStorage.getItem('token')
+    // if (token){
+    //   const user = jwt.decode(token)
+    //   if(!user){
+    //     localStorage.removeItem('token')
+    //     navigate.replace('/login')
+    //   }else{
+    //     populateQuote()
+    //   }
+    // }
+  }, [])
+
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
